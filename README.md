@@ -1,2 +1,5 @@
-# water-stores-explorer
-Year 9 interactive water stores, residence times, energy and pathways, with a printable student worksheet.
+# Water Stores Explorer
+
+Year 9 research activities on water stores, residence times, solar energy and pathways. Students transfer their findings onto the printable worksheet.
+
+Static HTML, CSS and JavaScript. No build step or accounts required.

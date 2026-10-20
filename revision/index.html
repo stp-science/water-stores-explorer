@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Year 9 revision for Spheres of the Earth: interactive diagrams, retrieval questions, explanations and a printable practice paper.">
+  <meta name="theme-color" content="#123f4b">
+  <title>Spheres of the Earth · Year 9 revision</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to revision</a>
+  <header><a class="brand" href="#"><span class="brand-icon" aria-hidden="true">◉</span><span>ST PETER’S SCIENCE<small>YEAR 9 · REVISION</small></span></a><button id="reset" class="text-button">Reset progress</button></header>
+  <section class="hero" aria-labelledby="page-title"><div class="hero-copy"><p class="eyebrow">SPHERES OF THE EARTH</p><h1 id="page-title">One planet.<br>Connected systems.</h1><p>Follow the water. Explain the science.<br>Check what you can remember.</p><div class="hero-actions"><button class="primary" data-mode="learn">Start revising <span aria-hidden="true">↗</span></button><a class="outline-light" href="Y9_Spheres_Practice_Questions.pdf" download>Get the practice paper ↓</a></div></div><svg class="hero-art" viewBox="0 0 420 300" role="img" aria-labelledby="hero-title"><title id="hero-title">Water links the air, land and living things</title><defs><clipPath id="planet"><circle cx="210" cy="152" r="120"/></clipPath></defs><circle cx="210" cy="152" r="137" fill="none" stroke="#77b7ba" stroke-dasharray="3 9"/><g clip-path="url(#planet)"><circle cx="210" cy="152" r="120" fill="#b5ddd5"/><path d="M80 175Q130 150 180 178T340 174V290H80Z" fill="#4f9ba4"/><path d="M95 192 180 65 235 192 278 120 342 207 342 290 80 290Z" fill="#6c856d"/><path d="m157 100 23-35 25 58-25-10Z" fill="#f6f0dc"/><path d="M80 219Q145 194 212 224T350 216V300H80Z" fill="#267486"/><path d="m251 177 17-38 18 38h-12v25h-12v-25Z" fill="#173f41"/><g fill="#f8f5e8"><ellipse cx="261" cy="94" rx="33" ry="12"/><ellipse cx="247" cy="84" rx="19" ry="14"/><ellipse cx="275" cy="84" rx="15" ry="12"/></g><path d="m251 114-5 11m23-9-5 11m23-11-5 11" stroke="#327d9b" stroke-width="3" stroke-linecap="round"/></g><path d="M100 187C65 118 99 61 151 42M286 54c63 26 73 98 42 145" fill="none" stroke="#f2cf7e" stroke-width="3"/><path d="m140 39 13 2-6 12m178 133 4 14 11-8" fill="none" stroke="#f2cf7e" stroke-width="3"/><circle cx="92" cy="62" r="14" fill="#f2cf7e"/><text x="38" y="274" fill="#d8eae7" font-size="12" letter-spacing="2">AIR · WATER · LAND · LIFE</text></svg></section>
+  <main id="main" tabindex="-1">
+    <div class="lesson-strip"><strong>Revision for today</strong><span>Try from memory → check the notes → practise on paper → improve your answers.</span></div>
+    <nav class="mode-nav" aria-label="Revision activities"><button data-mode="learn" aria-pressed="true">01 <span>Revise</span></button><button data-mode="quiz" aria-pressed="false">02 <span>Quick quiz</span></button><button data-mode="explain" aria-pressed="false">03 <span>Explain it</span></button><button data-mode="paper" aria-pressed="false">04 <span>Practice paper</span></button></nav>
+    <div id="workspace"></div>
+    <noscript><p>Please enable JavaScript to use the revision activities. You can still download the <a href="Y9_Spheres_Practice_Questions.pdf">practice questions</a>.</p></noscript>
+  </main>
+  <footer><span>Year 9 Science · Spheres of the Earth</span><a href="../">Open Water Stores Explorer ↗</a><span>Progress is saved on this device.</span></footer>
+  <dialog id="reset-dialog"><h2>Reset your progress?</h2><p>This clears topic confidence and quiz scores on this device.</p><form method="dialog"><button value="cancel" class="secondary">Keep progress</button><button value="reset" class="primary">Reset progress</button></form></dialog>
+</body>
+</html>

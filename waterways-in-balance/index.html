@@ -114,7 +114,7 @@ document.querySelectorAll(".screen").forEach((el,n)=>el.hidden=n!==page);
 document.querySelectorAll(".step").forEach((el,n)=>{el.classList.toggle("active",n===page);el.classList.toggle("done",n<page);if(n===page)el.setAttribute("aria-current","step");else el.removeAttribute("aria-current")});
 $("prevPage").disabled=page===0;$("nextPage").textContent=page===6?"Back to the brief ↺":"Next →";$("pageLabel").textContent="Step "+(page+1)+" of 7";
 history.replaceState(null,"","#"+pageIds[page]);
-window.scrollTo({top:0,behavior:"instant"});
+window.scrollTo({top:0,behavior:"auto"});
 document.querySelector(".step.active").scrollIntoView({inline:"nearest",block:"nearest"});
 }
 document.querySelectorAll("[data-page]").forEach(el=>el.addEventListener("click",()=>showPage(Number(el.dataset.page))));
@@ -128,7 +128,7 @@ function setEvidence(i){evidence=i;const d=evidenceData[i];$("evidenceStat").tex
 document.querySelectorAll("[data-evidence]").forEach(el=>el.addEventListener("click",()=>setEvidence(Number(el.dataset.evidence))));
 function updateActions(){const n=selected.length;$("solutionCount").textContent=n+" action"+(n===1?"":"s")+" selected";$("solutionMessage").textContent=n>=2?"Good. In Slide 3, explain why each action helps your chosen waterway.":"Choose at least two. You can use these ideas when planning Slide 3."}
 document.querySelectorAll("[data-solution]").forEach(el=>{const n=Number(el.dataset.solution);el.checked=selected.includes(n);el.addEventListener("change",()=>{if(el.checked&&!selected.includes(n))selected.push(n);if(!el.checked){const index=selected.indexOf(n);if(index>=0)selected.splice(index,1)}persist("wib-actions-v1",selected);updateActions()})});
-function showSlide(i){notes[slide]=$("slideNotes").value;persist("wib-notes-v1",notes);slide=Math.max(0,Math.min(4,i));const d=slides[slide];$("slideStep").textContent="Slide "+(slide+1)+" of 5";$("slideTitle").textContent=d.title;$("slideTime").textContent="Aim for "+d.time;$("slideVisuals").innerHTML="";d.visuals.forEach(t=>{const li=document.createElement("li");li.textContent=t;$("slideVisuals").appendChild(li)});$("slideSpeaker").textContent=d.speaker;$("slideStarter").textContent=d.starter;$("slideNotes").value=notes[slide]||"";$("prevSlide").disabled=slide===0;$("nextSlide").textContent=slide===4?"Go to final check →":"Next slide →";document.querySelectorAll("[data-slide]").forEach(el=>el.classList.toggle("current",Number(el.dataset.slide)===slide))}
+function showSlide(i){slide=Math.max(0,Math.min(4,i));const d=slides[slide];$("slideStep").textContent="Slide "+(slide+1)+" of 5";$("slideTitle").textContent=d.title;$("slideTime").textContent="Aim for "+d.time;$("slideVisuals").innerHTML="";d.visuals.forEach(t=>{const li=document.createElement("li");li.textContent=t;$("slideVisuals").appendChild(li)});$("slideSpeaker").textContent=d.speaker;$("slideStarter").textContent=d.starter;$("slideNotes").value=notes[slide]||"";$("prevSlide").disabled=slide===0;$("nextSlide").textContent=slide===4?"Go to final check →":"Next slide →";document.querySelectorAll("[data-slide]").forEach(el=>el.classList.toggle("current",Number(el.dataset.slide)===slide))}
 $("prevSlide").addEventListener("click",()=>showSlide(slide-1));
 $("nextSlide").addEventListener("click",()=>{if(slide===4){saveNotes();showPage(6)}else showSlide(slide+1)});
 $("slideNotes").addEventListener("input",saveNotes);
